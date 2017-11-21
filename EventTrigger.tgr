@@ -1,0 +1,18 @@
+/*
+ * @Purpose : This is Trigger on Event created for updating Account EventCount field
+ * @Created Date : 11-16-2017 
+ */
+trigger EventTrigger on Event(after insert, after delete) {
+    
+    if(trigger.isAfter){
+        if(trigger.isInsert){         
+            
+            EventTaskTriggerHandler.eventHandleAfterInsert(Trigger.new);            
+        }
+        
+        if(trigger.isDelete){
+            
+            EventTaskTriggerHandler.eventHandleAfterDelete(Trigger.old);            
+        }
+    }    
+}
