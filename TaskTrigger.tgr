@@ -1,4 +1,8 @@
-trigger TaskTrigger on Task (after insert, after delete) {
+/*
+ * @Purpose : This is Trigger on Task created for updating Account EventCount field
+ * @Created Date : 11-16-2017 
+ */
+ trigger TaskTrigger on Task (after insert, after delete) {
 
     if(trigger.isAfter){
         if(trigger.isInsert){         
